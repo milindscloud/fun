@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('back.webp') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        .yes {
+            background-color: lightgreen;
+        }
+        .no {
+            background-color: lightcoral;
+            position: absolute;
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gif-container">
+            <img src="start.gif" alt="Cute Valentine GIF">
+        </div>
+        <h1>Pleezzz!!!</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showLoveGif()">Yes</button>
+            <button class="no" id="noButton">No</button>
+        </div>
+    </div>
+    
+    <script>
+        const noButton = document.getElementById("noButton");
+        noButton.addEventListener("mouseover", function () {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        function showLoveGif() {
+            document.body.innerHTML = '<div style="text-align: center; margin-top: 50px;"><img src="end.gif" alt="Love GIF"><h1>Yay! ❤️</h1></div>';
+        }
+    </script>
+</body>
+</html>
